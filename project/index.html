@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+  <header>
+    <div id="titleWelcome"></div>
+      <h1>Sentence Diagrammer</h1>
+      <h2>Test Your Skills</h2>
+    </div>
+  <main>
+      <div id="mainL"><div>&nbsp;</div></div>
+     <div id="mainC" class="content">
+        <p>Your name :</p> <input  id="fn"onblur="validInput()"  required type="text">
+        <div id="message1"></div>
+        <p>Anticipated score<small>(out of 100%)</small> :</p> <input required  id="num"type="number" 
+        min='0' max='100' >
+        <div id="message2"></div>
+          <button type="submit" class="menu"  onclick="validScore()" >Submit</button>  
+      </div>
+      <div id="mainR">  <div>&nbsp;</div>  </div>   
+  </main>
+  <section>
+    <div id="direct" class="directs">
+  </section>
+  <script src="main.js">
+
+  </script>
+</body>
+  
+</html>

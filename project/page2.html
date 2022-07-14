@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="description" content="Interactive practice for diagramming sentences.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body onresize="sentDiag.redraw()">
+    <header>
+      <div id="titleDiagram" >
+        <h1><span id="curSent"></span></h1>
+        <h2>Please diagram the sentence above, <span id="fnameEntered"></span>.</h2>
+      </div>
+      </header>    
+   <main>
+       <div id="mainL">
+        <div id="mainLshow" >
+        <button class="sentStructure" ondrag='sentDiag.elDragged=1' draggable="true">
+            <img src="mainSentence.jpg" width="58" height="32" alt="subject verb 
+            structure">
+        </button>
+        <p>subject verb</p>
+        <button class="sentStructure" ondrag='sentDiag.elDragged=2' draggable="true">
+            <img src="directObject.jpg" width="58" height="32"
+            alt="subject verb sentence structure">
+        </button>
+        <p>direct object</p>
+        <button class="sentStructure" ondrag='sentDiag.elDragged=3' draggable="true">
+            <img src="modifier.jpg" width="58" height="32"
+            alt="subject verb sentence structure">
+        </button>
+        <p> modifier</p>
+       </div>
+       </div>
+       <div  id="mainC"  >
+      <canvas id="myCanvas" ondrop="sentDiag.processChoice(event);"
+      ondragover="event.preventDefault();">
+     Your browser does not support the HTML5 canvas tag.
+    </canvas>
+       </div>
+       <div id="mainR">
+        <div id="mainRshow">&nbsp;</div>
+      </div>
+   </main> 
+    <section id="navDirectionsFeedback">
+    <div id="direct" class="directs">
+        <div id="directShow">
+          <input id='res' class='menu' type='submit' value='Reset'  
+              onclick='sentDiag.resetAll();'>
+          <input id='checkP' class='menu' type='submit' value='Check Answer' 
+              onclick='sentDiag.checkProposal();'>
+             <div id="errMess"></div>
+          <div id="directions">
+            <p>Drag diagram elements onto the canvas.<br>
+            Then drag words onto the diagram.</p>
+          </div>
+        </div>
+      </div>    
+   </section>
+</body>
+<script src="main.js">
+ 
+  </script>
+  
+</html>
